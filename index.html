@@ -1,201 +1,164 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>وظائف حكومية للسعوديين</title>
-  <style>
-    body {
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #f3f4f6, #e0f2f1);
-      margin: 0;
-      padding: 0;
-      color: #111827;
-    }
-    .container {
-      max-width: 620px;
-      margin: auto;
-      background: #fff;
-      padding: 24px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      margin-top: 40px;
-    }
-    h1 {
-      color: #047857;
-      font-size: 26px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    p, .disclaimer {
-      font-size: 16px;
-      margin: 10px 0;
-      text-align: center;
-    }
-    .highlight {
-      color: #b91c1c;
-      font-weight: bold;
-    }
-    .countdown {
-      background: #fef3c7;
-      padding: 12px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 18px;
-      margin: 20px 0;
-      color: #92400e;
-    }
-    .cta-btn {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      background-color: #047857;
-      color: white;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .cta-btn:hover {
-      background-color: #065f46;
-      transform: translateY(-2px);
-    }
 
-    /* التعليقات */
-    .comments {
-      margin-top: 30px;
-    }
-    .comment {
-      display: flex;
-      align-items: flex-start;
-      background: #f9fafb;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    .comment img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-left: 12px;
-    }
-    .comment-body {
-      font-size: 15px;
-    }
-    .comment-body strong {
-      color: #111827;
-      display: block;
-      margin-bottom: 4px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* تأخير الظهور */
-    .comment:nth-child(1) { animation-delay: 0.5s; }
-    .comment:nth-child(2) { animation-delay: 1.2s; }
-    .comment:nth-child(3) { animation-delay: 1.9s; }
-    .comment:nth-child(4) { animation-delay: 2.6s; }
-    .comment:nth-child(5) { animation-delay: 3.3s; }
+<title>فرص عمل للسعوديين</title>
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+<style>
 
-    .disclaimer {
-      font-size: 13px;
-      color: #6b7280;
-      margin-top: 25px;
-    }
+body{
+font-family:tahoma;
+background:#f3f4f6;
+margin:0;
+padding:0;
+}
 
-    @media (max-width: 480px) {
-      .container {
-        padding: 18px;
-      }
-      h1 {
-        font-size: 22px;
-      }
-      .cta-btn {
-        font-size: 18px;
-        padding: 14px;
-      }
-      .comment-body {
-        font-size: 14px;
-      }
-    }
-  </style>
+.container{
+max-width:500px;
+margin:auto;
+background:#fff;
+padding:25px;
+margin-top:40px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+h1{
+color:#047857;
+}
+
+.question{
+font-size:20px;
+margin:20px 0;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+font-size:18px;
+background:#047857;
+color:#fff;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#065f46;
+}
+
+.hidden{
+display:none;
+}
+
+.cta{
+display:block;
+background:#dc2626;
+color:#fff;
+padding:18px;
+border-radius:12px;
+font-size:20px;
+text-decoration:none;
+margin-top:20px;
+}
+
+.counter{
+background:#fef3c7;
+padding:10px;
+border-radius:10px;
+margin-top:15px;
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="container">
-    <h1>📢 وظائف حكومية للسعوديين 2025</h1>
-    <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
-    <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
-    <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
-    
-    <a href="https://smrturl.co/a/sa7af109433/1867?s1=" class="cta-btn" target="_blank">
-      🔒 اضغط هنا للتسجيل باستخدام رقم الجوال
-    </a>
 
-    <div class="comments">
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
-        <div class="comment-body">
-          <strong>سامي المطيري</strong>
-          قدمت أمس واستلمت الكود خلال دقيقة، طريقة التسجيل بسيطة وواضحة.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="بدر">
-        <div class="comment-body">
-          <strong>بدر الحربي</strong>
-          أول مرة أسجل في وظيفة ويتم التواصل معي بعد ساعتين فقط، ممتاز.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="أحمد">
-        <div class="comment-body">
-          <strong>أحمد الزهراني</strong>
-          سجلت وتم التواصل معي اليوم، شكراً لكم على الفرصة.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="محمد">
-        <div class="comment-body">
-          <strong>محمد القحطاني</strong>
-          العرض ممتاز وأفضل شيء إنه يشمل كل المناطق داخل السعودية.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="عبدالله">
-        <div class="comment-body">
-          <strong>عبدالله الشهري</strong>
-          التسجيل ما أخذ مني دقيقة، وتم إرسال كود التفعيل فوراً، أنصح بالتقديم.
-        </div>
-      </div>
-    </div>
+<div class="container">
 
-    <div class="disclaimer">
-      * ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.
-    </div>
-  </div>
+<h1>📢 فرص عمل للسعوديين</h1>
 
-  <script>
-    let time = 20;
-    const timer = document.getElementById("timer");
-    const interval = setInterval(() => {
-      time--;
-      timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
-      if (time <= 0) clearInterval(interval);
-    }, 1000);
-  </script>
+<div class="counter">
+📈 أكثر من 1200 شخص قدم اليوم
+</div>
+
+<div id="step1">
+
+<div class="question">
+هل أنت مقيم في السعودية؟
+</div>
+
+<button class="btn" onclick="next(2)">نعم</button>
+<button class="btn" onclick="next(2)">لا</button>
+
+</div>
+
+
+<div id="step2" class="hidden">
+
+<div class="question">
+هل عمرك بين 21 و 55 سنة؟
+</div>
+
+<button class="btn" onclick="next(3)">نعم</button>
+<button class="btn" onclick="next(3)">لا</button>
+
+</div>
+
+
+<div id="step3" class="hidden">
+
+<div class="question">
+هل تستخدم رقم جوال سعودي؟
+</div>
+
+<button class="btn" onclick="next(4)">نعم</button>
+<button class="btn" onclick="next(4)">لا</button>
+
+</div>
+
+
+<div id="step4" class="hidden">
+
+<h2 style="color:#047857">
+✅ أنت مؤهل للتسجيل
+</h2>
+
+<p>
+اضغط الزر بالأسفل وأدخل رقم الجوال لاستلام كود التفعيل
+</p>
+
+<a href="https://kpozblt.com/cl/01989e43d5b29e2f?source=facebook&site=fb&p1={{campaign.name}}&p2={{adset.name}}&p3={{ad.name}}" class="cta">
+
+📲 ابدأ التسجيل الآن
+
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+function next(step){
+
+document.querySelectorAll("[id^=step]").forEach(el=>el.classList.add("hidden"));
+
+document.getElementById("step"+step).classList.remove("hidden");
+
+}
+
+</script>
+
 </body>
+
 </html>
