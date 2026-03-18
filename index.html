@@ -3,313 +3,281 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>وظائف مطلوبة في السعودية</title>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
 
-*{box-sizing:border-box}
+  body {
+    font-family: tahoma, Arial;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 15px;
+  }
 
-body{
-font-family:tahoma,Arial;
-background:#f3f4f6;
-margin:0;
-padding:15px;
-}
+  .container {
+    max-width: 520px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
 
-.container{
-max-width:520px;
-margin:auto;
-background:#fff;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-text-align:center;
-}
+  h1 {
+    color: #047857;
+    font-size: 24px;
+  }
 
-h1{
-color:#047857;
-font-size:24px;
-}
+  .counter {
+    background: #fef3c7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+  }
 
-.counter{
-background:#fef3c7;
-padding:10px;
-border-radius:10px;
-margin-top:10px;
-font-size:15px;
-}
+  .jobs-left {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
 
-.jobs-left{
-background:#fee2e2;
-color:#b91c1c;
-padding:10px;
-border-radius:10px;
-margin-top:10px;
-font-weight:bold;
-}
+  .question {
+    font-size: 20px;
+    margin: 20px 0;
+  }
 
-.question{
-font-size:20px;
-margin:20px 0;
-}
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    background: #047857;
+    color: #fff;
+    cursor: pointer;
+  }
 
-.btn{
-display:block;
-width:100%;
-padding:16px;
-margin-top:10px;
-border:none;
-border-radius:10px;
-font-size:18px;
-background:#047857;
-color:#fff;
-cursor:pointer;
-}
+  .hidden {
+    display: none;
+  }
 
-.hidden{display:none}
+  .progress {
+    background: #e5e7eb;
+    border-radius: 10px;
+    height: 10px;
+    margin: 15px 0;
+    overflow: hidden;
+  }
 
-.progress{
-background:#e5e7eb;
-border-radius:10px;
-height:10px;
-margin:15px 0;
-overflow:hidden;
-}
+  .progress-bar {
+    background: #047857;
+    height: 10px;
+    width: 25%;
+    transition: 0.3s;
+  }
 
-.progress-bar{
-background:#047857;
-height:10px;
-width:25%;
-transition:0.3s;
-}
+  .cta {
+    display: block;
+    background: #dc2626;
+    color: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 20px;
+  }
 
-.cta{
-display:block;
-background:#dc2626;
-color:#fff;
-padding:18px;
-border-radius:12px;
-font-size:20px;
-text-decoration:none;
-margin-top:20px;
-}
+  .safe {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 10px;
+  }
 
-.cta2{
-display:block;
-background:#2563eb;
-color:#fff;
-padding:16px;
-border-radius:12px;
-font-size:18px;
-text-decoration:none;
-margin-top:12px;
-}
+  .comments {
+    text-align: right;
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
 
-.safe{
-font-size:14px;
-color:#6b7280;
-margin-top:10px;
-}
+  .comment {
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
 
-.comments{
-text-align:right;
-margin-top:25px;
-border-top:1px solid #eee;
-padding-top:15px;
-}
+  .notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    display: none;
+  }
 
-.comment{
-background:#f9fafb;
-padding:10px;
-border-radius:8px;
-margin-top:8px;
-font-size:14px;
-}
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 22px;
+    }
 
-.notification{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#fff;
-padding:12px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-font-size:14px;
-display:none;
-}
+    .question {
+      font-size: 18px;
+    }
 
+    .btn {
+      font-size: 17px;
+      padding: 15px;
+    }
+
+    .cta {
+      font-size: 18px;
+      padding: 16px;
+    }
+  }
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<h1>📢 وظائف مطلوبة في السعودية</h1>
+    <h1>📢 وظائف مطلوبة في السعودية</h1>
 
-<div class="counter" id="counter">
-📈 أكثر من 1187 شخص قدم اليوم
-</div>
+    <div class="counter" id="counter">
+      📈 أكثر من 1187 شخص قدم اليوم
+    </div>
 
-<div class="jobs-left" id="jobs">
-⚠️ متبقي 27 وظيفة فقط اليوم
-</div>
+    <div class="jobs-left" id="jobs">
+      ⚠️ متبقي 27 وظيفة فقط اليوم
+    </div>
 
-<div class="progress">
-<div id="progress" class="progress-bar"></div>
-</div>
+    <div class="progress">
+      <div id="progress" class="progress-bar"></div>
+    </div>
 
-<div id="step1">
+    <div id="step1">
+      <div class="question">
+        اختر الوظيفة التي تريد التقديم عليها
+      </div>
 
-<div class="question">
-اختر الوظيفة التي تريد التقديم عليها
-</div>
+      <button class="btn" onclick="next(2)">سائق</button>
+      <button class="btn" onclick="next(2)">حارس أمن</button>
+      <button class="btn" onclick="next(2)">موظف استقبال</button>
+      <button class="btn" onclick="next(2)">خدمة عملاء</button>
+      <button class="btn" onclick="next(2)">موظف مستودع</button>
+      <button class="btn" onclick="next(2)">كاشير</button>
+      <button class="btn" onclick="next(2)">محاسب</button>
+      <button class="btn" onclick="next(2)">فني صيانة</button>
+      <button class="btn" onclick="next(2)">عامل توصيل</button>
+      <button class="btn" onclick="next(2)">مندوب مبيعات</button>
+      <button class="btn" onclick="next(2)">وظيفة أخرى</button>
+    </div>
 
-<button class="btn" onclick="next(2)">سائق</button>
-<button class="btn" onclick="next(2)">حارس أمن</button>
-<button class="btn" onclick="next(2)">موظف استقبال</button>
-<button class="btn" onclick="next(2)">خدمة عملاء</button>
-<button class="btn" onclick="next(2)">موظف مستودع</button>
-<button class="btn" onclick="next(2)">كاشير</button>
-<button class="btn" onclick="next(2)">محاسب</button>
-<button class="btn" onclick="next(2)">فني صيانة</button>
-<button class="btn" onclick="next(2)">عامل توصيل</button>
-<button class="btn" onclick="next(2)">مندوب مبيعات</button>
-<button class="btn" onclick="next(2)">وظيفة أخرى</button>
+    <div id="step2" class="hidden">
+      <div class="question">
+        هل عمرك بين 21 و 55 سنة؟
+      </div>
 
-</div>
+      <button class="btn" onclick="next(3)">نعم</button>
+      <button class="btn" onclick="next(3)">لا</button>
+    </div>
 
-<div id="step2" class="hidden">
+    <div id="step3" class="hidden">
+      <div class="question">
+        هل لديك رقم جوال سعودي؟
+      </div>
 
-<div class="question">
-هل عمرك بين 21 و 55 سنة؟
-</div>
+      <button class="btn" onclick="next(4)">نعم</button>
+      <button class="btn" onclick="next(4)">لا</button>
+    </div>
 
-<button class="btn" onclick="next(3)">نعم</button>
-<button class="btn" onclick="next(3)">لا</button>
+    <div id="step4" class="hidden">
+      <h2 style="color:#047857">
+        ✅ أنت مؤهل للتسجيل
+      </h2>
 
-</div>
+      <p>
+        اضغط الزر بالأسفل وأدخل رقم الجوال لاستلام كود التفعيل
+      </p>
 
-<div id="step3" class="hidden">
+      <a href="https://wmouwvgz.one/cl/96b32fe2aa47d4aa?p1={{rw1}}&p2={{rw2}}&source=facebook&site={{rwaby}}"
+        class="cta" target="_blank">
+        📲 استلم كود التفعيل الآن
+      </a>
 
-<div class="question">
-هل لديك رقم جوال سعودي؟
-</div>
+      <p class="safe">
+        🔒 بياناتك آمنة ولا تتم مشاركتها
+      </p>
+    </div>
 
-<button class="btn" onclick="next(4)">نعم</button>
-<button class="btn" onclick="next(4)">لا</button>
+    <div class="comments">
+      <b>💬 تعليقات المتقدمين</b>
 
-</div>
+      <div class="comment">محمد من الرياض: تم قبولي خلال يومين 👍</div>
+      <div class="comment">أحمد من جدة: التسجيل سهل واستلمت الرد بسرعة</div>
+      <div class="comment">سارة من الدمام: حصلت على وظيفة خدمة عملاء</div>
+      <div class="comment">عبدالله من مكة: شكراً تم التواصل معي</div>
+    </div>
 
-<div id="step4" class="hidden">
+  </div>
 
-<h2 style="color:#047857">
-✅ أنت مؤهل للتسجيل
-</h2>
+  <div class="notification" id="notify"></div>
 
-<p>
-اضغط الزر بالأسفل وأدخل رقم الجوال لاستلام كود التفعيل
-</p>
+  <script>
+    function next(step) {
+      document.querySelectorAll("[id^=step]").forEach((el) => el.classList.add("hidden"));
+      document.getElementById("step" + step).classList.remove("hidden");
+      document.getElementById("progress").style.width = step * 25 + "%";
+    }
 
-<a href="https://duwfobb.one/cl/5c37f594ae1924f7?p1={campaign.name}&p2={ad.name}&source=facebook&site=fb
-"
-class="cta" target="_blank">
+    let count = 1187;
 
-📲 استلم كود التفعيل الآن
+    setInterval(() => {
+      count += Math.floor(Math.random() * 3);
+      document.getElementById("counter").innerText = "📈 أكثر من " + count + " شخص قدم اليوم";
+    }, 4000);
 
-</a>
+    let jobs = 27;
 
-<a href="https://xmaaubb.bid/cl/e78932d9f6b61ea3?p1={fb2}&p2={f2}&source=facebook&site=fb"
-class="cta2" target="_blank">
+    setInterval(() => {
+      if (jobs > 5) {
+        jobs--;
+        document.getElementById("jobs").innerText = "⚠️ متبقي " + jobs + " وظيفة فقط اليوم";
+      }
+    }, 7000);
 
-⚠️ إذا لم يعمل الرابط الأول اضغط هنا
+    let names = ["محمد", "أحمد", "عبدالله", "سارة", "خالد", "فهد", "نورة", "ياسر"];
 
-</a>
-
-<p class="safe">
-🔒 بياناتك آمنة ولا تتم مشاركتها
-</p>
-
-</div>
-
-<div class="comments">
-
-<b>💬 تعليقات المتقدمين</b>
-
-<div class="comment">محمد من الرياض: تم قبولي خلال يومين 👍</div>
-<div class="comment">أحمد من جدة: التسجيل سهل واستلمت الرد بسرعة</div>
-<div class="comment">سارة من الدمام: حصلت على وظيفة خدمة عملاء</div>
-<div class="comment">عبدالله من مكة: شكراً تم التواصل معي</div>
-
-</div>
-
-</div>
-
-<div class="notification" id="notify"></div>
-
-<script>
-
-function next(step){
-
-document.querySelectorAll("[id^=step]").forEach(el=>el.classList.add("hidden"));
-
-document.getElementById("step"+step).classList.remove("hidden");
-
-document.getElementById("progress").style.width=(step*25)+"%";
-
-}
-
-let count=1187;
-
-setInterval(()=>{
-
-count+=Math.floor(Math.random()*3);
-
-document.getElementById("counter").innerText=
-"📈 أكثر من "+count+" شخص قدم اليوم";
-
-},4000);
-
-let jobs=27;
-
-setInterval(()=>{
-
-if(jobs>5){
-
-jobs--;
-
-document.getElementById("jobs").innerText=
-"⚠️ متبقي "+jobs+" وظيفة فقط اليوم";
-
-}
-
-},7000);
-
-let names=["محمد","أحمد","عبدالله","سارة","خالد","فهد","نورة","ياسر"];
-
-setInterval(()=>{
-
-let name=names[Math.floor(Math.random()*names.length)];
-
-let box=document.getElementById("notify");
-
-box.innerText="🔔 "+name+" من السعودية قام بالتسجيل الآن";
-
-box.style.display="block";
-
-setTimeout(()=>{
-
-box.style.display="none";
-
-},3000);
-
-},8000);
-
-</script>
+    setInterval(() => {
+      let name = names[Math.floor(Math.random() * names.length)];
+      let box = document.getElementById("notify");
+      box.innerText = "🔔 " + name + " من السعودية قام بالتسجيل الآن";
+      box.style.display = "block";
+      setTimeout(() => {
+        box.style.display = "none";
+      }, 3000);
+    }, 8000);
+  </script>
 
 </body>
+
 </html>
