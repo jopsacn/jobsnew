@@ -1,82 +1,442 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تم فتح باب التعيين</title>
-  <meta content="https://i.imgur.com/13yxhMl.jpg" name="og:image"/>
-  <link href="https://i.imgur.com/13yxhMl.jpg" rel="shortcut icon"/>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900&display=swap');
-    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:url('https://i.imgur.com/gDeHz6O.jpg')no-repeat center center fixed;background-size:cover;color:#fff;direction:rtl;overflow-x:hidden;display:flex;justify-content:center;align-items:center;height:100vh}h1,h2,h3,h4{font-weight:400}h2{font-size:1.5em;text-align:center;margin:10px 0}a{text-decoration:none;color:#fff;font-weight:bold;padding:10px 20px;background-color:#ff5e00;border-radius:5px;display:inline-block;transition:background-color 0.3s ease,transform 0.3s ease}a:hover{background-color:#ff3c00;transform:scale(1.1)}#wrapper{width:100%;max-width:600px;text-align:center;padding:20px}#questionWrapper{background:rgba(0,0,0,0.6);padding:20px;border-radius:15px;text-align:center}#intro{margin:20px 0}#intro img{width:100%;max-width:400px;border-radius:15px;margin-bottom:20px}.question{display:none;margin-top:20px}.answer{background-color:#ff5e00;color:white;border-radius:5px;padding:10px 20px;font-size:16px;margin:10px 0;display:inline-block;width:80%;max-width:400px;cursor:pointer;transition:background-color 0.3s ease,transform 0.3s ease}.answer:hover{background-color:#ff3c00;transform:scale(1.05)}.center{text-align:center}.center img{border-radius:10px;max-width:100%;height:auto}.waiting-message{display:none;background-color:#ff9800;color:white;padding:15px;border-radius:10px;margin-top:20px;font-size:18px}@media(max-width:768px){#questionWrapper{width:95%}}@media(max-width:480px){h2{font-size:14px}.answer{width:90%}}
-  </style>
-</head>
-<body>
-  <div id="wrapper">
-    <div id="questionWrapper">
-      <div id="intro">
-        <img src="https://i.imgur.com/YPKX4vz.jpg" alt="بوستر إعلاني" class="center">
-        <p><b>شركات السعودية</b><br> تم فتح باب التعيين لا يشترط الخبرة. للحصول على وظيفتك الخاصة ما عليك سوى الإجابة عن الأسئلة التالية:</p>
-      </div>
-      <div class="question question1" style="display:block;">
-        <h2>هل انت جاهز للبدء ؟</h2>
-        <div class="answer" data-next=".question2" style="background-color:#ff5733;">نعم</div>
-      </div>
-      <div class="question question2">
-        <h2>هل انت جاهز للبدء ؟</h2>
-        <div class="answer" data-next=".question3" style="background-color:#33c1ff;">نعم</div>
-        <div class="answer" data-next=".question3" style="background-color:#c133ff;">لا</div>
-      </div>
-      <div class="question question3">
-        <h2>حدد جنسك</h2>
-        <div class="answer" data-next=".question4" style="background-color:#8e44ad;">ذكر</div>
-        <div class="answer" data-next=".question4" style="background-color:#f39c12;">أنثى</div>
-      </div>
-      <div class="question question4">
-        <h2>حدد السن الخاص بك</h2>
-        <div class="answer" data-next=".question5" style="background-color:#16a085;">من 18 لـ 25</div>
-        <div class="answer" data-next=".question5" style="background-color:#f1c40f;">من 26 لـ 35</div>
-        <div class="answer" data-next=".question5" style="background-color:#d35400;">من 36 لـ 45</div>
-        <div class="answer" data-next=".question5" style="background-color:#2980b9;">من 46 لـ 60</div>
-        <div class="answer" data-next=".question5" style="background-color:#e74c3c;">آخر</div>
-      </div>
-      <div class="question question5">
-        <h2>اختر الوظيفة المناسبة لك</h2>
-        <div class="answer" data-next=".question6" style="background-color:#1abc9c;">سواق</div>
-        <div class="answer" data-next=".question6" style="background-color:#9b59b6;">عامل نظافة</div>
-        <div class="answer" data-next=".question6" style="background-color:#e67e22;">محاسب</div>
-        <div class="answer" data-next=".question6" style="background-color:#2ecc71;">سائق معدات</div>
-        <div class="answer" data-next=".question6" style="background-color:#3498db;">عمال سباكة</div>
-        <div class="answer" data-next=".question6" style="background-color:#f39c12;">مبلط سيراميك</div>
-        <div class="answer" data-next=".question6" style="background-color:#34495e;">موظفات مكتب الاستقبال</div>
-        <div class="answer" data-next=".question6" style="background-color:#1abc9c;">ميكانيكي</div>
-        <div class="answer" data-next=".question6" style="background-color:#16a085;">سائق بلدوزر</div>
-        <div class="answer" data-next=".question6" style="background-color:#9b59b6;">نادلات</div>
-        <div class="answer" data-next=".question6" style="background-color:#f1c40f;">عمال بناء</div>
-      </div>
-      <div class="question question6">
-        <h2>برجاء التسجيل برقم الهاتف ليتم التواصل</h2>
-        <div class="answer" id="phone-register-button" style="background-color:#e74c3c;">سجل برقم هاتفك الآن</div>
-      </div>
-    </div>
-  </div>
-  <script>
-    document.querySelectorAll('.answer').forEach(function(button) {
-      button.addEventListener('click', function() {
-        var nextQuestionClass = button.getAttribute('data-next');
-        var currentQuestion = button.closest('.question');
-        var nextQuestion = document.querySelector(nextQuestionClass);
-        
-        if (nextQuestion) {
-          currentQuestion.style.display = 'none';
-          nextQuestion.style.display = 'block';
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقديم على وظائف السعودية - نجح 247 موظف هذا الأسبوع</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        if (button.id === 'phone-register-button') {
-          window.location.href = "https://hisswrpmcm.bid/cl/868242d76cb4e415?p1=&p2=&source=facebook&site=fb";
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
         }
-      });
-    });
-  </script>
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="10" r="0.8" fill="%23ffffff" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 25px 0;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border-radius: 25px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,212,255,0.4);
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .main-title {
+            color: white;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .success-badge {
+            background: linear-gradient(135deg, #00c851, #28a745);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 auto 15px;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,200,81,0.4);
+            animation: bounceIn 1s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-badge i { margin-left: 8px; }
+
+        .job-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #00c851);
+        }
+
+        .success-stories {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: none;
+        }
+
+        .success-story {
+            background: linear-gradient(135deg, #00c851, #28a745);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            animation: slideIn 0.5s ease forwards;
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .job-title {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            font-size: 16px;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102,126,234,0.1);
+            transform: translateY(-2px);
+        }
+
+        .gender-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .gender-option {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+        }
+
+        .gender-option.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .register-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 22px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.3);
+        }
+
+        .register-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .register-btn:hover::before {
+            left: 100%;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(255,107,107,0.5);
+        }
+
+        .register-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .floating-saudi {
+            position: fixed;
+            top: 25px;
+            left: 20px;
+            background: linear-gradient(135deg, #00c851, #28a745);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,200,81,0.4);
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 15px; }
+            .main-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-saudi">
+        🇸🇦 وظائف للسعوديين فقط
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-building"></i>
+            </div>
+            <h1 class="main-title">وظائف السعودية المميزة</h1>
+            <div class="success-badge">
+                <i class="fas fa-trophy"></i>
+                نجح 247 موظف هذا الأسبوع
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="success-stories" id="successStories"></div>
+
+            <h2 class="job-title">املأ البيانات للتقديم</h2>
+
+            <form id="jobForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">الاسم الكامل</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">العمر</label>
+                        <select class="form-select" id="ageSelect" required>
+                            <option value="">السن</option>
+                            <option value="20">20-25</option>
+                            <option value="25">25-30</option>
+                            <option value="30">30-35</option>
+                            <option value="35">35-40</option>
+                            <option value="40">40+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">الوظيفة المطلوبة</label>
+                        <select class="form-select" id="jobSelect" required>
+                            <option value="">اختر الوظيفة</option>
+                            <option value="عامل">عامل</option>
+                            <option value="سائق">سائق</option>
+                            <option value="سائق خاص">سائق خاص</option>
+                            <option value="نجار">نجار</option>
+                            <option value="سباك">سباك</option>
+                            <option value="سكرتيرة">سكرتيرة</option>
+                            <option value="مدرس/مدرسة">مدرس/مدرسة</option>
+                            <option value="مسوق/ه">مسوق/ه</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">الجنس</label>
+                        <div class="gender-group" style="margin-top: 8px;">
+                            <div class="gender-option active" data-gender="ذكر">
+                                <i class="fas fa-mars"></i><br>ذكر
+                            </div>
+                            <div class="gender-option" data-gender="أنثى">
+                                <i class="fas fa-venus"></i><br>أنثى
+                            </div>
+                        </div>
+                        <input type="hidden" id="genderInput" name="gender" value="ذكر" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-rocket"></i>
+                    التقديم الآن وتحديد موعد
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // قصص النجاح
+        const successStories = [
+            "أحمد العتيبي ✓",
+            "فاطمة الزهراني ✓", 
+            "محمد الشمري ✓",
+            "نورة القحطاني ✓",
+            "عبدالله الدوسري ✓",
+            "سارة الغامدي ✓",
+            "خالد الزهراني ✓",
+            "مريم العنزي ✓"
+        ];
+
+        let storyIndex = 0;
+        const storiesContainer = document.getElementById('successStories');
+
+        function addSuccessStory() {
+            const story = document.createElement('div');
+            story.className = 'success-story';
+            story.textContent = successStories[storyIndex];
+            storiesContainer.appendChild(story);
+            
+            storyIndex = (storyIndex + 1) % successStories.length;
+            
+            setTimeout(() => {
+                if (storiesContainer.children.length > 6) {
+                    storiesContainer.removeChild(storiesContainer.firstChild);
+                }
+            }, 100);
+        }
+
+        setInterval(addSuccessStory, 2000);
+        addSuccessStory();
+
+        // اختيار الجنس
+        document.querySelectorAll('.gender-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.gender-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('genderInput').value = this.dataset.gender;
+            });
+        });
+
+        // التوجيه المباشر للـ CPA
+        document.getElementById('jobForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // التحقق من البيانات
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const age = document.getElementById('ageSelect').value;
+            const job = document.getElementById('jobSelect').value;
+            const gender = document.getElementById('genderInput').value;
+
+            if (name && age && job && gender) {
+                // إضافة تأثير التحميل
+                const btn = document.querySelector('.register-btn');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحويل...';
+                btn.disabled = true;
+
+                // التوجيه بعد ثانيتين
+                setTimeout(() => {
+                    window.open('https://xmaaubb.bid/cl/ab0187b5f3ec8583', '_blank');
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 </html>
